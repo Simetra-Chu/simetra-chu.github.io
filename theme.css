@@ -77,3 +77,18 @@ summary,.clear,.quantile-row button{color:#bcabd0}
 .page-nav a{color:var(--muted)}
 .page-nav a.active{background:#342047;color:#dfbcff}
 footer{color:#ab9abb}
+/* Keep the sky behind all content and outside hit testing. */
+body{isolation:isolate}
+body>header,body>main,body>footer{position:relative;z-index:1}
+.meteor-field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;user-select:none;contain:strict}
+.meteor-field span{position:absolute;left:var(--meteor-x);top:var(--meteor-y);width:var(--meteor-length);height:1px;border-radius:999px;background:linear-gradient(90deg,#f2e6ff,#c6a0f780 18%,#a57be826 52%,transparent);opacity:0;transform-origin:left center;animation:meteor-fall var(--meteor-duration) var(--meteor-delay) linear infinite}
+.meteor-field span::before{content:'';position:absolute;left:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#eadbff;box-shadow:0 0 7px 1px #c7a2ff66}
+.meteor-field.is-paused span{animation-play-state:paused}
+@keyframes meteor-fall{
+ 0%{opacity:0;transform:translate3d(0,0,0) rotate(-38deg)}
+ 3%{opacity:.6}
+ 15%,100%{opacity:0;transform:translate3d(-65vh,51vh,0) rotate(-38deg)}
+}
+@media(max-width:800px){.meteor-field span:nth-child(n+5){display:none}.meteor-field span{width:calc(var(--meteor-length)*.7)}.meteor-field span:first-child{left:100%;top:0}}
+@media(prefers-reduced-motion:reduce){.meteor-field{display:none}.meteor-field span{animation:none}}
+@media print{.meteor-field{display:none}}
