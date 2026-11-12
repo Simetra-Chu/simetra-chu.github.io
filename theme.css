@@ -1,0 +1,79 @@
+:root{
+ color-scheme:dark;
+ --page:#0e0b16;--surface:#1a1423;--surface-raised:#21192d;--input:#120e1b;
+ --text:#f1eaf9;--muted:#b3a5c5;--border:#382b49;--accent:#c7a2ff;
+ --chart-grid:#382b49;--chart-label:#b8a6cf;--chart-line:#c49aff;
+ --chart-fill:#a574e834;--chart-mark:#e3b981;--chart-mark-label:#edc994;
+ --chart-cohort:#705c87;--chart-student:#d6b4ff;
+ background:var(--page);color:var(--text);
+}
+body{min-height:100vh;background:radial-gradient(ellipse 900px 520px at 55% -120px,#4b276b48,transparent),radial-gradient(ellipse 700px 700px at 100% 40%,#2d1a4029,transparent),var(--page);color:var(--text)}
+::selection{background:#8c5bc9;color:#fff}
+header{border-color:var(--border)}
+.brand{color:var(--accent)}
+.brand span{color:var(--muted);border-color:#4c395f}
+.eyebrow{color:#c29af4}
+h1,h2,h3,h2 span{color:var(--text)}
+p,.hint{color:var(--muted)}
+.tags span{background:#251b35;color:#cdb5eb;border:1px solid #3d2c52}
+.card{background:linear-gradient(145deg,#1d1728,#17121f);background-color:var(--surface);border-color:var(--border);box-shadow:0 14px 35px #00000020}
+.section-title h2{color:var(--accent)}
+label{color:#d3c5e3}
+label small{color:#ac9bbf}
+input,select,.assessment textarea,.assessment-head input{background:var(--input);color:var(--text);border-color:#463354}
+input::placeholder,textarea::placeholder{color:#a295b3;opacity:1}
+input:focus,select:focus-visible,textarea:focus{outline:none;border-color:#b58ae8;box-shadow:0 0 0 3px #b58ae820}
+option{background:var(--surface);color:var(--text)}
+input[type="checkbox"],input[type="range"],.rho-control input,.toggles input{accent-color:#b588ed}
+input:disabled{background:#211b2a;color:#a595b7;border-color:#35283f}
+hr,details,.fit-table th,.fit-table td,.steps,.scenario{border-color:var(--border)}
+.toggles label{border-color:#4a385d;color:#c4b4d6;background:#1b1526}
+.toggles label:has(input:checked){background:#342047;border-color:#9d71cb;color:#e5c9ff}
+summary,.clear,.quantile-row button{color:#bcabd0}
+.text-button,.step-back{color:var(--accent)}
+.primary,.next-step a{background:linear-gradient(135deg,#7947cf,#6937ba);color:#fff;box-shadow:0 5px 18px #7746be30}
+.primary:hover,.next-step a:hover{background:linear-gradient(135deg,#8956db,#7946c9)}
+.primary:disabled{opacity:.6}
+.primary:focus-visible,.next-step a:focus-visible,.step-back:focus-visible{outline:2px solid #dec2ff;outline-offset:4px}
+.error{background:#351a2a;color:#ffc0d3;border:1px solid #79435b}
+.empty-symbol{background:#302040;color:#c99cff;box-shadow:inset 0 0 0 1px #60417e}
+.steps{color:#bfadd1}
+.badge,.weight-ok{background:#1c3029;color:#a0dfbf}
+.weight-error{background:#3a202a;color:#ffb5c5}
+.metric{border-color:var(--border)}
+.metric span,.metric small,.grade-prob small,.grade-section-note{color:var(--muted)}
+.metric:first-child strong{color:var(--accent)}
+.chart-box{background:#130f1c;border-color:#372a48}
+.legend{color:var(--muted)}
+.legend span:first-child{color:#c79eff}
+.method-note{background:#251c32;color:#ccb9e0}
+.notice{background:#2c231c;border-color:#b3935c;color:#e4c796}
+.notice.info{background:#261c36;border-color:#a276d1;color:#cfb8e7}
+.result-actions button{background:#261c34;border-color:#604677;color:#ddc6f5}
+.result-actions button:hover{background:#342447}
+.fit-table th{color:#bba7d0}
+.assessment{background:#17121f;border-color:#3b2c4c}
+.remove-assessment{color:#ddb3cf}
+.add-assessment{background:#241a32;border-color:#8763a9;color:#d9b8ff}
+.add-assessment:hover{background:#30213f}
+.rho-control span{color:var(--muted)}
+.progress-track{background:#382a48}
+.progress-track div{background:#b487ed}
+.grade-prob{background:#1c1528;border-color:#40304f}
+.grade-prob:first-child{background:linear-gradient(145deg,#362047,#25182f);border-color:#9465bf}
+.grade-prob strong{color:#d2acff}
+.grade-prob:last-child strong{color:#bdaccf}
+.prob-stack span:nth-child(1){background:#b285f1}
+.prob-stack span:nth-child(2){background:#8663b5}
+.prob-stack span:nth-child(3){background:#5d467f}
+.prob-stack span:nth-child(4){background:#3b2e4d}
+.grade-summary{background:#271c36;color:#c5b2da}
+.grade-summary b{color:#ddbdff}
+.next-step{background:#291c39;border-color:#885bab}
+.next-step p{color:#e0c7f8}
+#grade-step{border-color:var(--border)}
+#grade-step-hint{display:flex;align-items:flex-start;gap:9px;margin:12px 0 0;padding:13px 14px;background:linear-gradient(120deg,#342047,#261934);border:1px solid #9765c7;border-left:3px solid #ce9fff;border-radius:8px;color:#eed8ff;font-size:12px;font-weight:600;line-height:1.8;box-shadow:0 3px 14px #9a63cc14}
+#grade-step-hint:before{content:'下一步';flex-shrink:0;margin-top:2px;padding:1px 6px;border-radius:4px;background:#7548a3;color:#fff;font-size:10px;line-height:1.8}
+.page-nav a{color:var(--muted)}
+.page-nav a.active{background:#342047;color:#dfbcff}
+footer{color:#ab9abb}
