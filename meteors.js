@@ -3,14 +3,12 @@
  if(document.querySelector('.meteor-field'))return;
  const field=document.createElement('div');
  field.className='meteor-field';field.setAttribute('aria-hidden','true');
- const paths=[
-  [30,-5,125,9,-.4],[72,9,155,12,-6],[104,35,135,11,-3],
-  [58,64,115,14,-10],[93,-8,170,15,-12],[42,80,100,13,-5],
-  [112,70,145,10,-1.2]
- ];
- for(const [x,y,length,duration,delay] of paths){
+ // Stagger a full sky of independent trails, already in flight on first paint.
+ for(let i=0;i<64;i++){
+  const x=8+(i*47%137),y=-24+(i*29%121),length=90+(i*37%125);
+  const duration=2.8+(i%9)*.27,delay=-((i*.47+.3)%duration);
   const streak=document.createElement('span');
-  for(const [key,value] of Object.entries({x:x+'%',y:y+'%',length:length+'px',duration:duration+'s',delay:delay+'s'}))streak.style.setProperty('--meteor-'+key,value);
+  for(const [key,value] of Object.entries({x:x+'%',y:y+'%',length:length+'px',duration:duration+'s',delay:delay+'s',opacity:String(.38+(i%7)*.07),width:(.8+(i%3)*.3)+'px'}))streak.style.setProperty('--meteor-'+key,value);
   field.append(streak);
  }
  const pause=()=>field.classList.toggle('is-paused',document.hidden);

@@ -99,16 +99,16 @@ footer{color:#ab9abb}
 /* Keep the sky behind all content and outside hit testing. */
 body{isolation:isolate}
 body>header,body>main,body>footer{position:relative;z-index:1}
-.meteor-field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;user-select:none;contain:strict}
-.meteor-field span{position:absolute;left:var(--meteor-x);top:var(--meteor-y);width:var(--meteor-length);height:1px;border-radius:999px;background:linear-gradient(90deg,#f2e6ff,#c6a0f780 18%,#a57be826 52%,transparent);opacity:0;transform-origin:left center;animation:meteor-fall var(--meteor-duration) var(--meteor-delay) linear infinite}
+.meteor-field{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;user-select:none;contain:strict;--meteor-dx:-52vh;--meteor-dy:41vh}
+.meteor-field span{position:absolute;left:var(--meteor-x);top:var(--meteor-y);width:var(--meteor-length);height:var(--meteor-width);border-radius:999px;background:linear-gradient(90deg,#f2e6ff,#c6a0f7a6 18%,#a57be840 52%,transparent);opacity:0;transform-origin:left center;animation:meteor-fall var(--meteor-duration) var(--meteor-delay) linear infinite}
 .meteor-field span::before{content:'';position:absolute;left:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#eadbff;box-shadow:0 0 7px 1px #c7a2ff66}
 .meteor-field.is-paused span{animation-play-state:paused}
 @keyframes meteor-fall{
  0%{opacity:0;transform:translate3d(0,0,0) rotate(-38deg)}
- 3%{opacity:.6}
- 15%,100%{opacity:0;transform:translate3d(-65vh,51vh,0) rotate(-38deg)}
+ 8%,72%{opacity:var(--meteor-opacity)}
+ 90%,100%{opacity:0;transform:translate3d(var(--meteor-dx),var(--meteor-dy),0) rotate(-38deg)}
 }
-@media(max-width:800px){.meteor-field span:nth-child(n+5){display:none}.meteor-field span{width:calc(var(--meteor-length)*.7)}.meteor-field span:first-child{left:100%;top:0}}
+@media(max-width:800px){.meteor-field{--meteor-dx:-34vh;--meteor-dy:27vh}.meteor-field span:nth-child(n+41){display:none}.meteor-field span{width:calc(var(--meteor-length)*.65)}}
 @media(prefers-reduced-motion:reduce){.meteor-field{display:none}.meteor-field span{animation:none}}
 @media print{.meteor-field{display:none}}
 
@@ -146,14 +146,12 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  if(document.querySelector('.meteor-field'))return;
  const field=document.createElement('div');
  field.className='meteor-field';field.setAttribute('aria-hidden','true');
- const paths=[
-  [30,-5,125,9,-.4],[72,9,155,12,-6],[104,35,135,11,-3],
-  [58,64,115,14,-10],[93,-8,170,15,-12],[42,80,100,13,-5],
-  [112,70,145,10,-1.2]
- ];
- for(const [x,y,length,duration,delay] of paths){
+ // Stagger a full sky of independent trails, already in flight on first paint.
+ for(let i=0;i<64;i++){
+  const x=8+(i*47%137),y=-24+(i*29%121),length=90+(i*37%125);
+  const duration=2.8+(i%9)*.27,delay=-((i*.47+.3)%duration);
   const streak=document.createElement('span');
-  for(const [key,value] of Object.entries({x:x+'%',y:y+'%',length:length+'px',duration:duration+'s',delay:delay+'s'}))streak.style.setProperty('--meteor-'+key,value);
+  for(const [key,value] of Object.entries({x:x+'%',y:y+'%',length:length+'px',duration:duration+'s',delay:delay+'s',opacity:String(.38+(i%7)*.07),width:(.8+(i%3)*.3)+'px'}))streak.style.setProperty('--meteor-'+key,value);
   field.append(streak);
  }
  const pause=()=>field.classList.toggle('is-paused',document.hidden);
