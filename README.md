@@ -2,7 +2,7 @@
 
 Website: https://simetra-chu.github.io/examrank.html
 
-Tutorial links open an accessible scrollable overlay without leaving the page or clearing inputs. Missing grade distributions receive targeted amber guidance; visitors may explicitly choose a clearly labelled reference-distribution scenario, rescaled to each assessment maximum. Actual errors use higher contrast coral-red styling. No missing future distribution is silently invented.
+Website introduction briefly explains the purpose and two-step percentile → grade workflow. Both introduction and model notes open in the same accessible scrollable overlay without leaving the page or clearing inputs; detailed input examples are expandable in model notes. Missing grade distributions receive targeted amber guidance; visitors may explicitly choose a clearly labelled reference-distribution scenario, rescaled to each assessment maximum. Actual errors use higher contrast coral-red styling. No missing future distribution is silently invented.
 
 One self-contained HTML combines exam percentile/rank estimation and conditional course grade scenarios. Save examrank.html to calculate offline. Styles, scripts and calculation workers are embedded; calculation needs no API or external CDN. Optional feedback is saved privately using a dedicated intake service. Contacts are optional, and exam inputs are sent with feedback only when the visitor explicitly opts in.
 

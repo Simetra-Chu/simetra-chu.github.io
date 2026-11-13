@@ -111,5 +111,6 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#efbd59}
 .tutorial-content{margin:0;max-width:none;overflow-y:auto;overscroll-behavior:contain;padding:0 24px 20px;min-height:0}
 .tutorial-content .card{padding:19px;background:#1d1728}
 .tutorial-content h2{font-size:18px}
+.model-input-guide>summary{color:#e2c4ff;font-size:16px;font-weight:600;line-height:1.7}
 :root:has(.tutorial-dialog[open]) .meteor-field span{animation-play-state:paused}
 @media(max-width:600px){.tutorial-dialog{max-height:90dvh}.tutorial-header{padding:17px}.tutorial-content{padding:0 14px 14px}.tutorial-content .card{padding:15px}.tutorial-content h2{font-size:17px}}
