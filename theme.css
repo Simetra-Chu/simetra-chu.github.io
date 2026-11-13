@@ -35,11 +35,12 @@ summary,.clear,.quantile-row button{color:#bcabd0}
 .primary:hover,.next-step a:hover{background:linear-gradient(135deg,#8956db,#7946c9)}
 .primary:disabled{opacity:.6}
 .primary:focus-visible,.next-step a:focus-visible,.step-back:focus-visible{outline:2px solid #dec2ff;outline-offset:4px}
-.error{background:#351a2a;color:#ffc0d3;border:1px solid #79435b}
+.error{background:#421b13;color:#ffe8d9;border:1px solid #ff8a65;border-left:4px solid #ff8a65;padding:13px 15px;font-size:13px;line-height:1.8}
+.error.input-warning{background:#35270e;color:#ffe5ac;border-color:#efbd59}
 .empty-symbol{background:#302040;color:#c99cff;box-shadow:inset 0 0 0 1px #60417e}
 .steps{color:#bfadd1}
 .badge,.weight-ok{background:#1c3029;color:#a0dfbf}
-.weight-error{background:#3a202a;color:#ffb5c5}
+.weight-error{background:#421b13;color:#ffe8d9;border:1px solid #ff8a65}
 .metric{border-color:var(--border)}
 .metric span,.metric small,.grade-prob small,.grade-section-note{color:var(--muted)}
 .metric:first-child strong{color:var(--accent)}
@@ -92,3 +93,23 @@ body>header,body>main,body>footer{position:relative;z-index:1}
 @media(max-width:800px){.meteor-field{--meteor-dx:-34vh;--meteor-dy:27vh}.meteor-field span:nth-child(n+41){display:none}.meteor-field span{width:calc(var(--meteor-length)*.65)}}
 @media(prefers-reduced-motion:reduce){.meteor-field{display:none}.meteor-field span{animation:none}}
 @media print{.meteor-field{display:none}}
+.distribution-guidance{margin:14px 0 0;padding:14px;border:1px solid #d3a34e;border-left:3px solid #efbd59;border-radius:8px;background:#30240f}
+.distribution-guidance p{color:#ffe5ac;font-size:12px;line-height:1.8;margin:0}
+.distribution-guidance.reference-assumption{background:#102d30;border-color:#65c6c9}
+.distribution-guidance.reference-assumption p{color:#c3f0eb}
+.use-reference{display:block;margin:12px 0 0;border:1px solid #f2c76b;border-radius:6px;background:#4a3512;color:#fff0c6;padding:9px 12px;font:inherit;font-size:12px;cursor:pointer;text-align:left;white-space:normal}
+.use-reference:hover{background:#624716}
+.assessment.needs-distribution{border-color:#efbd59;box-shadow:0 0 0 2px #efbd5926}
+input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#efbd59}
+.tutorial-open{overflow:hidden}
+.tutorial-dialog{width:min(760px,calc(100vw - 28px));max-height:min(88dvh,920px);padding:0;border:1px solid #775995;border-radius:16px;background:#17121f;color:var(--text);box-shadow:0 30px 100px #0009;overflow:hidden}
+.tutorial-dialog[open]{display:flex;flex-direction:column}
+.tutorial-dialog::backdrop{background:#050309bf;backdrop-filter:blur(5px)}
+.tutorial-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid var(--border);flex-shrink:0;background:#21182d}
+.tutorial-header h2{margin-top:7px;font-size:21px;color:#e2c4ff}
+.tutorial-close{flex-shrink:0;padding:9px 13px;border:1px solid #795b97;border-radius:7px;background:#2c203a;color:#f1e4ff;font:inherit;cursor:pointer}
+.tutorial-content{margin:0;max-width:none;overflow-y:auto;overscroll-behavior:contain;padding:0 24px 20px;min-height:0}
+.tutorial-content .card{padding:19px;background:#1d1728}
+.tutorial-content h2{font-size:18px}
+:root:has(.tutorial-dialog[open]) .meteor-field span{animation-play-state:paused}
+@media(max-width:600px){.tutorial-dialog{max-height:90dvh}.tutorial-header{padding:17px}.tutorial-content{padding:0 14px 14px}.tutorial-content .card{padding:15px}.tutorial-content h2{font-size:17px}}

@@ -54,11 +54,12 @@ summary,.clear,.quantile-row button{color:#bcabd0}
 .primary:hover,.next-step a:hover{background:linear-gradient(135deg,#8956db,#7946c9)}
 .primary:disabled{opacity:.6}
 .primary:focus-visible,.next-step a:focus-visible,.step-back:focus-visible{outline:2px solid #dec2ff;outline-offset:4px}
-.error{background:#351a2a;color:#ffc0d3;border:1px solid #79435b}
+.error{background:#421b13;color:#ffe8d9;border:1px solid #ff8a65;border-left:4px solid #ff8a65;padding:13px 15px;font-size:13px;line-height:1.8}
+.error.input-warning{background:#35270e;color:#ffe5ac;border-color:#efbd59}
 .empty-symbol{background:#302040;color:#c99cff;box-shadow:inset 0 0 0 1px #60417e}
 .steps{color:#bfadd1}
 .badge,.weight-ok{background:#1c3029;color:#a0dfbf}
-.weight-error{background:#3a202a;color:#ffb5c5}
+.weight-error{background:#421b13;color:#ffe8d9;border:1px solid #ff8a65}
 .metric{border-color:var(--border)}
 .metric span,.metric small,.grade-prob small,.grade-section-note{color:var(--muted)}
 .metric:first-child strong{color:var(--accent)}
@@ -111,6 +112,26 @@ body>header,body>main,body>footer{position:relative;z-index:1}
 @media(max-width:800px){.meteor-field{--meteor-dx:-34vh;--meteor-dy:27vh}.meteor-field span:nth-child(n+41){display:none}.meteor-field span{width:calc(var(--meteor-length)*.65)}}
 @media(prefers-reduced-motion:reduce){.meteor-field{display:none}.meteor-field span{animation:none}}
 @media print{.meteor-field{display:none}}
+.distribution-guidance{margin:14px 0 0;padding:14px;border:1px solid #d3a34e;border-left:3px solid #efbd59;border-radius:8px;background:#30240f}
+.distribution-guidance p{color:#ffe5ac;font-size:12px;line-height:1.8;margin:0}
+.distribution-guidance.reference-assumption{background:#102d30;border-color:#65c6c9}
+.distribution-guidance.reference-assumption p{color:#c3f0eb}
+.use-reference{display:block;margin:12px 0 0;border:1px solid #f2c76b;border-radius:6px;background:#4a3512;color:#fff0c6;padding:9px 12px;font:inherit;font-size:12px;cursor:pointer;text-align:left;white-space:normal}
+.use-reference:hover{background:#624716}
+.assessment.needs-distribution{border-color:#efbd59;box-shadow:0 0 0 2px #efbd5926}
+input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#efbd59}
+.tutorial-open{overflow:hidden}
+.tutorial-dialog{width:min(760px,calc(100vw - 28px));max-height:min(88dvh,920px);padding:0;border:1px solid #775995;border-radius:16px;background:#17121f;color:var(--text);box-shadow:0 30px 100px #0009;overflow:hidden}
+.tutorial-dialog[open]{display:flex;flex-direction:column}
+.tutorial-dialog::backdrop{background:#050309bf;backdrop-filter:blur(5px)}
+.tutorial-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;border-bottom:1px solid var(--border);flex-shrink:0;background:#21182d}
+.tutorial-header h2{margin-top:7px;font-size:21px;color:#e2c4ff}
+.tutorial-close{flex-shrink:0;padding:9px 13px;border:1px solid #795b97;border-radius:7px;background:#2c203a;color:#f1e4ff;font:inherit;cursor:pointer}
+.tutorial-content{margin:0;max-width:none;overflow-y:auto;overscroll-behavior:contain;padding:0 24px 20px;min-height:0}
+.tutorial-content .card{padding:19px;background:#1d1728}
+.tutorial-content h2{font-size:18px}
+:root:has(.tutorial-dialog[open]) .meteor-field span{animation-play-state:paused}
+@media(max-width:600px){.tutorial-dialog{max-height:90dvh}.tutorial-header{padding:17px}.tutorial-content{padding:0 14px 14px}.tutorial-content .card{padding:15px}.tutorial-content h2{font-size:17px}}
 
 /* Shared guidance and feedback keep the existing dark-purple presentation. */
 .page-nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.page-nav a,.page-nav button{font:inherit;font-size:12px;padding:8px;border-radius:6px}.page-nav button{border:1px solid var(--border);background:transparent;color:var(--accent);cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.result-actions{gap:8px;flex-wrap:wrap}.estimate-disclaimer{font-size:12px;line-height:1.9;margin:20px 0 4px;padding:14px;border:1px solid #75598f;border-radius:8px;background:#251b32;color:#e0ccef}.method-note{margin:12px 0}.feedback-dialog{width:min(540px,calc(100vw - 28px));max-height:90vh;overflow-y:auto;border:1px solid #76558f;border-radius:15px;padding:25px;background:#1a1423;color:#f1eaf9;box-shadow:0 20px 80px #0008}.feedback-dialog::backdrop{background:#08050dcc}.feedback-dialog textarea{width:100%;resize:vertical;border:1px solid #463354;border-radius:7px;padding:12px;font:inherit;background:#120e1b;color:#f1eaf9;margin-top:7px}.feedback-dialog select{display:block;margin-top:7px;max-width:none;width:100%}.feedback-close{background:none;border:0;color:#dbc3f3;font-size:28px;cursor:pointer}.feedback-dialog .primary{margin-top:12px}.feedback-dialog #feedback-status{font-size:12px;color:#e4c796;line-height:1.8}.docs-content{max-width:850px}.docs-content .card{margin:20px 0}.docs-content h2{font-size:21px;margin-bottom:16px}.docs-content h3{font-size:16px;margin-top:24px}.docs-content p,.docs-content li{font-size:14px;line-height:1.9;color:var(--muted)}.docs-content li{margin:9px 0}.docs-content a,.inline-help a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}.docs-content code{background:#2c203b;padding:2px 5px;border-radius:4px}.docs-content .example{padding:16px;border-left:3px solid var(--accent);background:#261c36;border-radius:5px}.fit-scroll{max-width:100%;overflow-x:auto}.diagnostic-sections{margin-top:18px}.tags{flex-wrap:wrap}@media(max-width:800px){header{height:auto;min-height:86px;gap:12px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap}.page-nav{gap:3px}.page-nav a,.page-nav button{font-size:11px;padding:7px}.feedback-dialog{padding:20px}.docs-content h2{font-size:19px}}
@@ -157,6 +178,31 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  const pause=()=>field.classList.toggle('is-paused',document.hidden);
  document.addEventListener('visibilitychange',pause);pause();
  document.body.prepend(field);
+})();
+</script>
+<script>(()=>{
+ if(document.getElementById('tutorial-dialog'))return;
+ const content="\r\n<section class=\"card\"><h2>1 · 先填自己的考试信息</h2><p>“你的成绩”填实际取得的分数；“考试满分”填这次考试的满分，不一定是100。“考试人数”可不填：仍可估计百分位，但不显示期望名次。课程名称也可留空。</p><p class=\"example\">例如：你考了86分，满分100，全班341人。依次填86、100、341。如果不知道人数，就把人数栏留空。</p><p>未知的数据请留空，并取消对应的勾选。不要把“不知道”填成0；0是一个真实数值，会改变模型。没有全班统计信息时，仅凭个人分数和满分无法确定位置。</p></section>\r\n<section class=\"card\"><h2>2 · 认出老师公布的统计量</h2><ul><li><b>Mean / 均值</b>：所有成绩加起来，再除以人数。若老师写Mean = 72，就在均值栏填72。</li><li><b>Median / 中位数</b>：成绩从低到高排列时的中间位置，也称P50。它可能与均值不同。</li><li><b>SD / 标准差</b>：描述成绩分散程度，和分数使用同一单位。老师写SD = 10，就在标准差栏填10。</li><li><b>Variance / 方差</b>：标准差的平方。例如SD = 10时，方差是100；不要把100填进SD栏。如果老师只给方差，就勾选“方差”。</li></ul><p>按老师公布的原始分数填写，不用先除以满分。均值、标准差和分位点属于同一次考试，不能把不同考试的数据混用。</p></section>\r\n<section class=\"card\"><h2>3 · P20、P80应当怎样填？</h2><p>P20是“约20%的成绩不高于这个分数”的分数门槛。P80则对应约80%。它们是<b>分位水平对应的成绩</b>，不是你的得分率。</p><p class=\"example\">若老师写P20 = 65、P80 = 90：勾选“分位点”，第一行左边填20，右边填65；第二行左边填80，右边填90。左栏填80，不要填0.8。这里只是示范，不要当作你的班级数据。</p><p>每行需要一对“水平＋分数”。有更多已知分位点就添加一行；完全未知的行保持两格都空，或删除。相同成绩出现在多个分位点时请如实填写，模型会提示同分的影响。</p></section>\r\n<section class=\"card\"><h2>4 · 读懂结果里的四个数</h2><ul><li><b>得分率</b> = 个人成绩 ÷ 满分。86/100的得分率是86%，它只描述卷面分数。</li><li><b>百分位p</b>：估计有多少比例的成绩不高于你。p = 0.8显示为P80。</li><li><b>前百分比</b>约为100 × (1 − p)%。P80约为前20%，不是前80%。</li><li><b>期望名次</b> = 1 + (n − 1) × (1 − p)。这是连续模型下的统计期望，可以带小数；不是学校公布的实际第几名。</li></ul><p class=\"example\"><b>80分不等于P80。</b>一张很容易的卷子，80分也许低于中位数；一张很难的卷子，80分也许很靠前。要知道位置，还需要全班的统计信息。</p><p>真实同分人数和排名规则未知时，恰好等于已公布门槛、0分或满分不一定有唯一可识别的个人名次。此时页面会保留范围与说明，不凭空给出唯一位置。</p></section>\r\n<section class=\"card\"><h2>5 · 一个完整的局部插值例子</h2><p>下面是教学用假想数据：你的分数86/100；P60 = 85.5，P80 = 90；人数341。在“分位点”填入这两行。</p><p class=\"example\">86在85.5到90之间走了(86 − 85.5)/(90 − 85.5) = 1/9。<br>估计p = 0.60 + (1/9) × (0.80 − 0.60) ≈ 0.6222，即P62.22。<br>约前37.78%；若n = 341，期望名次约为1 + 340 × 0.3778 ≈ 129.44。</p><p>已知两点支持的范围是P60–P80，<b>不是95%置信区间</b>。中间采用线性变化是假设；Beta对照有时会不同，两者不会平均成一个结果。</p></section>\r\n<section class=\"card\"><h2>6 · 和课堂上的分位数 πₚ 有什么关系？</h2><p>课堂常用πₚ表示第p分位数：给你百分位p，求对应分数。本站的局部插值走相反方向：你已经有分数，反求对应的百分位。在同一段严格递增的直线上，两者可以互相反解。</p><p class=\"example\">P60 = 85.5、P80 = 90时：<br>给定p = 0.70，课堂插值求得π₀.₇ = 85.5 + (0.70 − 0.60) / (0.80 − 0.60) × (90 − 85.5) = 87.75。<br>反过来，输入87.75分，本站在同一段上估计为P70。</p><p>若两端分数相同，就不能除以分数差反解。不同教材从原始样本计算分位数时也可能采用不同位置规则；只有老师公布的几个门槛，无法还原原始成绩。</p></section>\r\n<section class=\"card\"><h2>7 · 可选检查与下一步等级情景</h2><p>公布精度：老师的统计量保留1位小数时，可填步长0.1；四舍五入到整数时可填1。不知道就留空。只在局部括号稳定时给出可证明的四舍五入影响范围。</p><p>留一检查：暂时隐藏一个已知分位点，用其余摘要估计该点的位置，再和公布水平比较。它检查摘要之间的一致性，不是对真实排名的验证。</p><p>期末还没考、全班统计量未知时，请先补充你明确设定的均值和标准差，或主动点击“暂按第1步考试分布做假设”。该选项按两次考试满分换算得分率分布；不是期末真实统计，也不保证未来难度相同。切回输入统计量后会恢复你原来填写的数据。</p><p>单场得到可用百分位后，排位结果下方才会显示等级预测。补充其他考核的权重、全班分布和明确假设；已知个人成绩保持固定。未知的未来考试分布与相关性ρ会影响结果，所有等级概率都是条件情景。</p><p><a href=\"examrank.html\">开始填写 →</a> · <a href=\"model.html\">继续了解模型与局限 →</a></p></section>\r\n",dialog=document.createElement('dialog');let opener;
+ dialog.id='tutorial-dialog';dialog.className='tutorial-dialog';dialog.setAttribute('aria-labelledby','tutorial-title');
+ dialog.innerHTML='<div class="tutorial-header"><div><span class="eyebrow">EXAMRANK · GUIDE</span><h2 id="tutorial-title">新手教程</h2></div><button type="button" class="tutorial-close" aria-label="关闭新手教程" autofocus>关闭 ×</button></div><div class="tutorial-content docs-content" tabindex="0">'+content+'</div>';
+ document.body.append(dialog);
+ const close=()=>dialog.close();dialog.querySelector('.tutorial-close').onclick=close;
+ dialog.addEventListener('keydown',event=>{
+  if(event.key!=='Tab')return;
+  const items=[...dialog.querySelectorAll('button,a[href],[tabindex="0"]')].filter(el=>!el.disabled&&el.getClientRects().length);
+  const first=items[0],last=items.at(-1);
+  if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+  else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+ });
+ dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)close();});
+ dialog.addEventListener('close',()=>{document.documentElement.classList.remove('tutorial-open');opener?.focus({preventScroll:true});});
+ document.addEventListener('click',event=>{
+  const trigger=event.target.closest('a[href="tutorial.html"],a[href="./tutorial.html"],[data-tutorial]');
+  if(trigger){event.preventDefault();opener=trigger;dialog.showModal();document.documentElement.classList.add('tutorial-open');dialog.querySelector('.tutorial-content').scrollTop=0;return;}
+  const back=event.target.closest('a[href="examrank.html"]');
+  if(back&&dialog.contains(back)&&document.getElementById('exam-form')){event.preventDefault();close();}
+ });
+ document.querySelectorAll('a[href="tutorial.html"],a[href="./tutorial.html"],[data-tutorial]').forEach(el=>{el.setAttribute('aria-haspopup','dialog');el.setAttribute('aria-controls','tutorial-dialog');});
 })();
 </script>
 <script>(()=>{
@@ -308,13 +354,49 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  };
 })();
 </script>
+<script>/* Readiness guidance only; the calculation engine remains the final validator. */
+(()=>{
+ const present=value=>typeof value==='number'&&Number.isFinite(value);
+ function distributionGap(c){
+  if(c.weight===0||present(c.constant))return null;
+  if(Object.hasOwn(c,'constant'))return {field:'constant',message:'请填写全班同分的具体分数；不知道时请改用统计量或明确假设。'};
+  const levels=new Set((c.percentiles??[]).map(q=>q.level));if(present(c.median))levels.add(.5);
+  if(present(c.mean)&&(present(c.std_dev)||present(c.variance)||present(c.median)||present(c.kappa)||levels.size))return null;
+  if(levels.size>=2)return null;
+  if(present(c.mean))return {field:'std_dev',message:'目前只有全班均值，还需标准差、其他统计量，或你明确指定的浓度 κ 假设。'};
+  return {field:'mean',message:'还没有足够的全班统计量。请补充均值和标准差，或选择一个明确的假设情景。'};
+ }
+ function scaleReference(source,maxScore){
+  if(!source||!present(source.max_score)||source.max_score<=0||!present(maxScore)||maxScore<=0)throw Error('请先填写有效满分，并完成第1步考试估计。');
+  const ratio=maxScore/source.max_score,result={};
+  for(const key of ['mean','std_dev','median'])if(present(source[key]))result[key]=source[key]*ratio;
+  if(present(source.variance))result.variance=source.variance*ratio*ratio;
+  if(source.percentiles?.length)result.percentiles=source.percentiles.map(q=>({level:q.level,score:q.score*ratio}));
+  return result;
+ }
+ globalThis.ExamRankGradeInputs={distributionGap,scaleReference};
+})();
+</script>
 <script>(()=>{
  const $=s=>document.querySelector(s),form=$('#grade-form'),list=$('#assessment-list'),results=$('#grade-results'),empty=results.innerHTML;
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const fmt=(x,d=1)=>Number(x).toFixed(d);let worker=null,generation=0,timer=null,observer=null;
- function invalidate(){generation++;worker?.terminate();worker=null;clearTimeout(timer);$('#grade-calculate').disabled=false;$('#grade-calculate').innerHTML='预测最终等级 <span>→</span>';$('#grade-cancel').hidden=true;$('#grade-progress').hidden=true;$('#grade-error').hidden=true;results.innerHTML=empty;observer?.disconnect();}
+ const fmt=(x,d=1)=>Number(x).toFixed(d),{distributionGap,scaleReference}=window.ExamRankGradeInputs;let worker=null,generation=0,timer=null,observer=null,referenceSource=null;
+ function invalidate(){generation++;worker?.terminate();worker=null;clearTimeout(timer);$('#grade-calculate').disabled=false;$('#grade-calculate').innerHTML='预测最终等级 <span>→</span>';$('#grade-cancel').hidden=true;$('#grade-progress').hidden=true;$('#grade-error').hidden=true;list.querySelectorAll('.needs-distribution').forEach(card=>card.classList.remove('needs-distribution'));list.querySelectorAll('[aria-invalid]').forEach(el=>el.removeAttribute('aria-invalid'));results.innerHTML=empty;observer?.disconnect();}
  const control=(card,key)=>card.querySelector(`[data-key="${key}"]`);
- function syncCard(card){const known=control(card,'known').checked,constant=control(card,'mode').value==='constant',active=Number(control(card,'weight').value)>0;control(card,'student_score').disabled=!known;control(card,'student_score').required=known&&active;card.querySelector('.distribution-stats').hidden=constant;card.querySelector('.constant-field').hidden=!constant;card.querySelectorAll('[data-dist-stat]').forEach(e=>e.disabled=constant);control(card,'constant').disabled=!constant;control(card,'constant').required=constant&&active;}
+ function syncCard(card){
+  const known=control(card,'known').checked,mode=control(card,'mode').value,constant=mode==='constant',reference=mode==='reference',active=Number(control(card,'weight').value)>0;
+  control(card,'student_score').disabled=!known;control(card,'student_score').required=known&&active;card.querySelector('.distribution-stats').hidden=constant;card.querySelector('.constant-field').hidden=!constant;
+  control(card,'mode').querySelector('[value=reference]').disabled=!referenceSource;
+  const statKeys=['mean','std_dev','median','variance','kappa','percentiles'];
+  if(reference&&!card.referenceBackup)card.referenceBackup=Object.fromEntries(statKeys.map(key=>[key,control(card,key).value]));
+  if(!reference&&card.referenceBackup){for(const key of statKeys)control(card,key).value=card.referenceBackup[key];delete card.referenceBackup;}
+  card.querySelectorAll('[data-dist-stat]').forEach(e=>e.disabled=constant||reference);control(card,'constant').disabled=!constant;control(card,'constant').required=constant&&active;
+  if(reference&&referenceSource){try{const scaled=scaleReference(referenceSource,number(card,'max_score'));for(const key of ['mean','std_dev','median','variance','kappa'])control(card,key).value=scaled[key]??'';control(card,'percentiles').value=(scaled.percentiles??[]).map(q=>q.level*100+':'+q.score).join(', ');}catch{}}
+  const guide=card.querySelector('.distribution-guidance'),text=guide.querySelector('.distribution-message'),use=guide.querySelector('.use-reference');let gap;
+  try{gap=distributionGap(readComponent(card));}catch(error){gap={message:error.message};}
+  guide.hidden=!active||constant||(!gap&&!reference);guide.classList.toggle('reference-assumption',reference);use.hidden=!gap||!referenceSource||reference;
+  text.textContent=reference?'假设情景：暂按「'+(referenceSource?.course_name||'第1步考试')+'」的全班得分率分布模拟，随本项满分自动换算。这不是期末实际统计；可切回输入统计量修改。':gap?.message??'';
+ }
  function totals(){const cards=[...list.children],total=cards.reduce((s,c)=>s+Number(control(c,'weight').value||0),0),badge=$('#weight-total');badge.textContent='合计'+Number(total.toFixed(4))+'%';badge.className=Math.abs(total-100)<1e-6?'weight-ok':'weight-error';cards.forEach(c=>{syncCard(c);c.querySelector('.remove-assessment').disabled=cards.length<=1;});$('#add-assessment').disabled=cards.length>=8;
   const k=cards.filter(c=>Number(control(c,'weight').value)>0&&control(c,'mode').value!=='constant').length,min=k>1?Math.ceil((-1/(k-1)+.001)*100)/100:-.99;$('#rho-range').min=min;$('#grade-rho').min=min;
   const current=Number($('#grade-rho').value);if($('#grade-rho').value&&current<min){$('#grade-rho').value=min;$('#rho-range').value=min;}
@@ -322,12 +404,20 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  }
  function add(data={}){
   if(list.children.length>=8)return;const card=document.createElement('article');card.className='assessment';
-  card.innerHTML=`<div class="assessment-head"><label>项目名称<input data-key="name" list="assessment-names" maxlength="80" required></label><button type="button" class="remove-assessment" aria-label="删除考核项目">删除</button></div><div class="assessment-grid"><label>权重（%）<input data-key="weight" type="number" min="0" max="100" step="any" required></label><label>满分<input data-key="max_score" type="number" min="0.000001" step="any" required></label><label>我的成绩<input data-key="student_score" type="number" min="0" step="any" placeholder="未知，留待模拟"></label></div><label class="check"><input type="checkbox" data-key="known">我的这项成绩已经确定</label><label>全班成绩的情况<select data-key="mode"><option value="beta">有分布，按统计量估计</option><option value="constant">全班同分（例如出勤满分）</option></select></label><label class="constant-field" hidden>全班每个人的分数<input data-key="constant" type="number" min="0" step="any" placeholder="明确假设，例如100"></label><div class="distribution-stats"><div class="stats-grid"><label>全班均值<input data-key="mean" data-dist-stat type="number" min="0" step="any" placeholder="未知时留空"></label><label>全班标准差<input data-key="std_dev" data-dist-stat type="number" min="0" step="any" placeholder="未知时留空"></label></div><details><summary>其他统计量 / 只有均值时的假设</summary><div class="stats-grid"><label>中位数<input data-key="median" data-dist-stat type="number" min="0" step="any"></label><label>方差<input data-key="variance" data-dist-stat type="number" min="0" step="any"></label></div><label>分位点（百分位:分数，逗号分隔）<textarea data-key="percentiles" data-dist-stat placeholder="20:73.5, 40:80, 60:85.5, 80:90"></textarea></label><label>浓度 κ <small>仅在只有均值时使用</small><input data-key="kappa" data-dist-stat type="number" min="0.05" max="2000" step="any" placeholder="你明确指定的假设，不自动填写"></label><p class="hint">没有标准差时可填写其他统计量。未来考试尚无统计量时，只能输入明确的假设并据此分析，不能将它当成已知分布。</p></details></div>`;
+  card.innerHTML=`<div class="assessment-head"><label>项目名称<input data-key="name" list="assessment-names" maxlength="80" required></label><button type="button" class="remove-assessment" aria-label="删除考核项目">删除</button></div><div class="assessment-grid"><label>权重（%）<input data-key="weight" type="number" min="0" max="100" step="any" required></label><label>满分<input data-key="max_score" type="number" min="0.000001" step="any" required></label><label>我的成绩<input data-key="student_score" type="number" min="0" step="any" placeholder="未知，留待模拟"></label></div><label class="check"><input type="checkbox" data-key="known">我的这项成绩已经确定</label><label>全班成绩的情况<select data-key="mode"><option value="beta">输入全班统计量（公布数据或明确假设）</option><option value="reference">暂按第1步考试分布模拟（假设）</option><option value="constant">全班同分（例如出勤满分）</option></select></label><label class="constant-field" hidden>全班每个人的分数<input data-key="constant" type="number" min="0" step="any" placeholder="明确假设，例如100"></label><div class="distribution-stats"><div class="stats-grid"><label>全班均值<input data-key="mean" data-dist-stat type="number" min="0" step="any" placeholder="未知时留空"></label><label>全班标准差<input data-key="std_dev" data-dist-stat type="number" min="0" step="any" placeholder="未知时留空"></label></div><details><summary>其他统计量 / 只有均值时的假设</summary><div class="stats-grid"><label>中位数<input data-key="median" data-dist-stat type="number" min="0" step="any"></label><label>方差<input data-key="variance" data-dist-stat type="number" min="0" step="any"></label></div><label>分位点（百分位:分数，逗号分隔）<textarea data-key="percentiles" data-dist-stat placeholder="20:73.5, 40:80, 60:85.5, 80:90"></textarea></label><label>浓度 κ <small>仅在只有均值时使用</small><input data-key="kappa" data-dist-stat type="number" min="0.05" max="2000" step="any" placeholder="你明确指定的假设，不自动填写"></label><p class="hint">没有标准差时可填写其他统计量。未来考试尚无统计量时，只能输入明确的假设并据此分析，不能将它当成已知分布。</p></details><div class="distribution-guidance" hidden><p class="distribution-message" role="status"></p><button type="button" class="use-reference">暂按第1步考试分布做假设 →</button></div></div>`;
   list.append(card);const values={name:'其他考核',max_score:100,weight:0,...data};for(const key of ['name','max_score','weight','student_score','mean','std_dev','median','variance','kappa','constant'])if(values[key]!==undefined)control(card,key).value=values[key];control(card,'known').checked=data.student_score!==undefined;control(card,'mode').value=data.constant!==undefined?'constant':'beta';if(data.percentiles)control(card,'percentiles').value=data.percentiles.map(q=>q.level*100+':'+q.score).join(', ');
-  card.querySelector('.remove-assessment').onclick=()=>{if(list.children.length>1){card.remove();totals();invalidate();}};totals();
+  card.querySelector('.remove-assessment').onclick=()=>{if(list.children.length>1){card.remove();totals();invalidate();}};card.querySelector('.use-reference').onclick=()=>{control(card,'mode').value='reference';totals();invalidate();};totals();
  }
  function number(card,key){const value=control(card,key).value.trim();return value===''?undefined:Number(value);}
- function input(){const components=[...list.children].map(card=>{const c={name:control(card,'name').value.trim(),max_score:number(card,'max_score'),weight:number(card,'weight')};if(control(card,'known').checked)c.student_score=number(card,'student_score');if(c.weight===0)return c;if(control(card,'mode').value==='constant')c.constant=number(card,'constant');else{for(const key of ['mean','std_dev','median','variance','kappa']){const value=number(card,key);if(value!==undefined)c[key]=value;}const text=control(card,'percentiles').value.trim();if(text)c.percentiles=text.split(/[,，;；\n]+/).filter(s=>s.trim()).map(pair=>{const values=pair.trim().split(/[:：]/);if(values.length!==2||!values[0].trim()||!values[1].trim()||!Number.isFinite(Number(values[0]))||!Number.isFinite(Number(values[1])))throw Error(c.name+'：分位点格式应类似20:73.5, 80:90。');return {level:Number(values[0])/100,score:Number(values[1])};});}return c;});return {components,n_students:Number($('#grade-n').value),rho:Number($('#grade-rho').value),iterations:Number($('#grade-iterations').value),reference_samples:Number($('#grade-reference').value),seed:Number($('#grade-seed').value),rounding:$('#grade-rounding').value,tie_policy:$('#grade-ties').value};}
+ function readComponent(card){
+  const c={name:control(card,'name').value.trim(),max_score:number(card,'max_score'),weight:number(card,'weight')};if(control(card,'known').checked)c.student_score=number(card,'student_score');if(c.weight===0)return c;
+  const mode=control(card,'mode').value;if(mode==='constant')c.constant=number(card,'constant');else if(mode==='reference')Object.assign(c,scaleReference(referenceSource,c.max_score));else{
+   for(const key of ['mean','std_dev','median','variance','kappa']){const value=number(card,key);if(value!==undefined)c[key]=value;}
+   const text=control(card,'percentiles').value.trim();if(text)c.percentiles=text.split(/[,，;；\n]+/).filter(s=>s.trim()).map(pair=>{const values=pair.trim().split(/[:：]/);if(values.length!==2||!values[0].trim()||!values[1].trim()||!Number.isFinite(Number(values[0]))||!Number.isFinite(Number(values[1])))throw Error(c.name+'：分位点格式应类似20:73.5, 80:90。');return {level:Number(values[0])/100,score:Number(values[1])};});
+  }return c;
+ }
+ function input(){return {components:[...list.children].map(readComponent),n_students:Number($('#grade-n').value),rho:Number($('#grade-rho').value),iterations:Number($('#grade-iterations').value),reference_samples:Number($('#grade-reference').value),seed:Number($('#grade-seed').value),rounding:$('#grade-rounding').value,tie_policy:$('#grade-ties').value};}
+
  window.ExamRankSupport?.registerInput('grade',input);
  function chart(canvas,hist){const width=canvas.clientWidth||800,height=210,dpr=window.devicePixelRatio||1;canvas.width=width*dpr;canvas.height=height*dpr;const c=canvas.getContext('2d');c.scale(dpr,dpr);const left=35,right=15,top=15,bottom=28,w=width-left-right,h=height-top-bottom,max=Math.max(...hist.cohort,...hist.student)*1.1;
   const theme=getComputedStyle(canvas),color=(key,fallback)=>theme.getPropertyValue('--chart-'+key).trim()||fallback;
@@ -341,22 +431,24 @@ body>header,body>main,body>footer{position:relative;z-index:1}
   const canvas=$('#grade-chart');const redraw=()=>chart(canvas,r.histogram);redraw();observer?.disconnect();observer=new ResizeObserver(redraw);observer.observe(canvas.parentElement);
   $('#grade-download').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify({course,input:data,result:r,disclaimer:window.ExamRankSupport.disclaimer},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='examrank-grade-prediction.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
  }
- function fail(message){$('#grade-error').textContent=message;$('#grade-error').hidden=false;}
+ function fail(message,card,key){const error=$('#grade-error');error.className='error'+(card?' input-warning':'');error.textContent=(card?'需要补充数据：':'无法完成预测：')+message;error.hidden=false;if(card){card.classList.add('needs-distribution');const field=control(card,key);field?.setAttribute('aria-invalid','true');field?.focus({preventScroll:true});card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});}}
  form.addEventListener('input',e=>{if(e.target.id==='rho-range')$('#grade-rho').value=e.target.value;if(e.target.id==='grade-rho')$('#rho-range').value=e.target.value;totals();invalidate();});
  form.addEventListener('change',()=>{totals();invalidate();});
  $('#add-assessment').onclick=()=>{add();invalidate();};$('#grade-cancel').onclick=invalidate;
- document.addEventListener('examrank:grade-source-invalidated',invalidate);
+ document.addEventListener('examrank:grade-source-invalidated',()=>{referenceSource=null;invalidate();});
  document.addEventListener('examrank:grade-import',event=>{
-  const source=event.detail,first={name:String(source.course_name||'本次考试').slice(0,80),weight:40,max_score:source.max_score,student_score:source.student_score};
+  const source=event.detail;referenceSource=source.reference_available?source:null;const first={name:String(source.course_name||'本次考试').slice(0,80),weight:40,max_score:source.max_score,student_score:source.student_score};
   for(const key of ['mean','std_dev','variance','median','percentiles'])if(source[key]!==undefined)first[key]=source[key];
   invalidate();list.innerHTML='';add(first);add({name:'期末 / 其他考试',weight:60,max_score:source.max_score});
   $('#grade-course').value=source.course_name||'';$('#grade-n').value=source.n_students??'';$('#grade-rho').value='.5';$('#rho-range').value='.5';totals();
  });
- $('#grade-example').onclick=()=>{invalidate();list.innerHTML='';add({name:'期中',max_score:100,weight:40,student_score:80,mean:65,std_dev:15});add({name:'期末',max_score:100,weight:60,mean:65,std_dev:15});$('#grade-n').value='100';$('#grade-course').value='演示课程（请替换为真实数据）';$('#grade-rho').value='.5';$('#rho-range').value='.5';totals();};
+ $('#grade-example').onclick=()=>{referenceSource={max_score:100,mean:65,std_dev:15,course_name:'演示期中'};invalidate();list.innerHTML='';add({name:'期中',max_score:100,weight:40,student_score:80,mean:65,std_dev:15});add({name:'期末',max_score:100,weight:60,mean:65,std_dev:15});$('#grade-n').value='100';$('#grade-course').value='演示课程（请替换为真实数据）';$('#grade-rho').value='.5';$('#rho-range').value='.5';totals();};
  form.onsubmit=e=>{e.preventDefault();invalidate();let data;try{data=input();if(Math.abs(data.components.reduce((s,c)=>s+c.weight,0)-100)>1e-6)throw Error('各项权重合计必须为100%。');}catch(error){fail(error.message);return;}
+  for(let i=0;i<data.components.length;i++){const gap=distributionGap(data.components[i]);if(gap){fail(data.components[i].name+'：'+gap.message,[...list.children][i],gap.field);return;}}
+  const scenarioNotes=[...list.children].filter(card=>Number(control(card,'weight').value)>0&&control(card,'mode').value==='reference').map(card=>control(card,'name').value+'：用户主动选择参照「'+(referenceSource?.course_name||'第1步考试')+'」的全班得分率分布，按本项满分'+control(card,'max_score').value+'换算。这是假设情景，并非该考试已经公布的统计量。');
   const id=generation,course=$('#grade-course').value.trim();worker=window.ExamRankEmbeddedWorkers.create('grades');$('#grade-calculate').disabled=true;$('#grade-calculate').textContent='正在预测…';$('#grade-cancel').hidden=false;$('#grade-progress').hidden=false;$('#grade-progress-bar').style.width='0%';
   const finish=()=>{worker?.terminate();worker=null;clearTimeout(timer);$('#grade-calculate').disabled=false;$('#grade-calculate').innerHTML='预测最终等级 <span>→</span>';$('#grade-cancel').hidden=true;$('#grade-progress').hidden=true;};
-  worker.onmessage=event=>{if(id!==generation)return;const message=event.data;if(message.progress!==undefined){$('#grade-progress-bar').style.width=(message.progress*100)+'%';$('#grade-progress-text').textContent=message.phase+' · '+Math.round(message.progress*100)+'%';}if(message.error){finish();fail(message.error);}if(message.result){finish();show(message.result,data,course);}};
+  worker.onmessage=event=>{if(id!==generation)return;const message=event.data;if(message.progress!==undefined){$('#grade-progress-bar').style.width=(message.progress*100)+'%';$('#grade-progress-text').textContent=message.phase+' · '+Math.round(message.progress*100)+'%';}if(message.error){finish();fail(message.error);}if(message.result){finish();message.result.assumptions.push(...scenarioNotes);message.result.warnings.push(...scenarioNotes);show(message.result,data,course);}};
   worker.onerror=()=>{if(id===generation){finish();fail('等级预测模块未能加载，请刷新后重试。');}};timer=setTimeout(()=>{if(id===generation){finish();fail('计算超时，请减少考核项目或参考抽样次数后重试。');}},60000);worker.postMessage(data);
  };
  add({name:'期中',max_score:100,weight:40});control(list.children[0],'known').checked=true;add({name:'期末',max_score:100,weight:60});totals();
@@ -375,7 +467,7 @@ body>header,body>main,body>footer{position:relative;z-index:1}
  document.addEventListener('examrank:exam-result',event=>{
   const {result,input}=event.detail;
   if(typeof result.percentile!=='number'||!Number.isFinite(result.percentile)){lock();return;}
-  document.dispatchEvent(new CustomEvent('examrank:grade-import',{detail:input}));
+  document.dispatchEvent(new CustomEvent('examrank:grade-import',{detail:{...input,reference_available:!!result.parameters}}));
   sourceNote.textContent='已带入第1步的成绩、满分和全班统计量。请确认项目名称与权重，再补充其余考核的分布。'+(!input.n_students?'还需要填写课程人数。':input.n_students>20000?'等级预测目前支持不超过20,000人的课程。':'');
   gradeStep.hidden=false;
   status.textContent='排位预测完成，等级预测已显示在下方。';
