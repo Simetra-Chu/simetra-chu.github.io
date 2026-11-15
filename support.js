@@ -1,5 +1,5 @@
 (()=>{
- const disclaimer='本结果为统计估计，不是实际排名。网站根据你提供的数据，使用 Beta 分布拟合、分位数线性插值或假设情景进行估计。数据缺失、四舍五入、同分及模型与真实分布不一致，都可能影响结果。结果仅供参考，实际成绩与排名以学校公布为准。';
+ const disclaimer='本结果为统计估计，不是实际排名。网站根据你提供的数据，使用 Beta 分布拟合、正态或截断正态近似、分位数线性插值或假设情景进行估计。数据缺失、四舍五入、同分及模型与真实分布不一致，都可能影响结果。结果仅供参考，实际成绩与排名以学校公布为准。';
  function feedbackPublicKey(value){
   value=String(value);if(!value)return '';
   if(value.length>2048||/\s/.test(value)||value.startsWith('sb_secret_'))throw Error();

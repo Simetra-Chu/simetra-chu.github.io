@@ -13,3 +13,5 @@ The primary estimate prefers linear interpolation strictly between published qua
 This public repository contains only the built website, public feedback URL/publishable application key, and landing page. It contains no server secret or feedback records. Source repositories are maintained privately. Third-party license notices are retained in the embedded calculation bundles. Existing https://simetra-chu.github.io/examrank/ pages remain available as a legacy release.
 
 Correlation can be reset to 0.5 with one click. Grade reports download as UTF-8 TXT with inputs, configured thresholds, probabilities, assumptions and limitations.
+
+Model checks flag U-shaped Beta fits, boundary concentration and tail sensitivity. Advanced controls offer automatic, explicit Beta and validated normal candidates. Normal candidates check boundary leakage, summary residuals and parameter identifiability; grade simulation uses bounded marginals and reports the chosen models. Known percentile support is respected. These are statistical scenarios, not learned or guaranteed grades.
