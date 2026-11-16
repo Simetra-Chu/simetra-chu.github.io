@@ -15,3 +15,5 @@ This public repository contains only the built website, public feedback URL/publ
 Correlation can be reset to 0.5 with one click. Grade reports download as UTF-8 TXT with inputs, configured thresholds, probabilities, assumptions and limitations.
 
 Model checks flag U-shaped Beta fits, boundary concentration and tail sensitivity. Advanced controls offer automatic, explicit Beta and validated normal candidates. Normal candidates check boundary leakage, summary residuals and parameter identifiability; grade simulation uses bounded marginals and reports the chosen models. Known percentile support is respected. These are statistical scenarios, not learned or guaranteed grades.
+
+Mean and median are selected by default. Best-effort estimates show residual RMSE/MAE and published-quantile R² only when defined. Unidentified width is a labelled fixed-concentration assumption with sensitivity scenarios; no raw class data are invented. Grade simulations require confirmation of assumed distributions.
